@@ -1,5 +1,6 @@
 package Main;
 
+import GameLogic.CreatureQueue;
 import UI.StartupMenu;
 
 public class Main {
@@ -16,6 +17,7 @@ public class Main {
 
     public static void main(String[] args) {
         setProperties();
+        CreatureQueue queue = new CreatureQueue();
         new StartupMenu();
     }
 }

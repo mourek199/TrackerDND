@@ -1,6 +1,6 @@
 package Creatures;
 
 public class Creature {
-    private
+    private String name;
     private int initiative;
 }
