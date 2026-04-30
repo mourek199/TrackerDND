@@ -1,3 +1,7 @@
+package Main;
+
+import UI.StartupMenu;
+
 public class Main {
 
     // Makes the graphics run on graphics driver using opengl
