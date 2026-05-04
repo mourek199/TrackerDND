@@ -1,4 +1,8 @@
 package Creatures;
 
-public class CreatureNeutral {
+public class CreatureNeutral extends Creature{
+
+    public CreatureNeutral(String name) {
+        super(name);
+    }
 }

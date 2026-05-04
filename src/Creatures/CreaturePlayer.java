@@ -1,4 +1,8 @@
 package Creatures;
 
-public class CreaturePlayer {
+public class CreaturePlayer extends Creature{
+
+    public CreaturePlayer(String name) {
+        super(name);
+    }
 }
