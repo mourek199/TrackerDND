@@ -4,7 +4,7 @@ import Commands.CmdNextTurn;
 import Creatures.CreatureEnemy;
 import Creatures.CreatureNeutral;
 import GameLogic.CreatureQueue;
-import UI.StartupMenu;
+import UI.Startup.StartupMenu;
 
 public class Main {
 

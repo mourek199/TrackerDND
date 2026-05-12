@@ -1,19 +1,20 @@
-package UI;
+package UI.WindowMain;
+
+import UI.CustomButton;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class MainWindow extends JFrame {
 
-
-
     private JPanel mainPanel;
-    private JPanel leftPanel;
-    private JPanel rightPanel;
-    private JPanel bottomPanel;
+    private LeftPanel leftPanel;
+    private RightPanel rightPanel;
+    private BottomPanel bottomPanel;
     private JLayeredPane myLayerPane;
     private JPanel layer0;
     private JPanel layer1;
+    private CustomButton newTurnButton;
 
     public MainWindow(){
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -30,28 +31,25 @@ public class MainWindow extends JFrame {
         mainPanel.setBackground(new Color(118, 149, 217));
 
         Dimension leftPanelSize = new Dimension(100, this.getHeight());
-        leftPanel = new JPanel();
+        leftPanel = new LeftPanel();
         leftPanel.setPreferredSize(leftPanelSize);
         leftPanel.setSize(leftPanelSize);
         leftPanel.setMinimumSize(leftPanelSize);
         leftPanel.setMaximumSize(leftPanelSize);
-        leftPanel.setBackground(new Color(255, 112, 112));
 
         Dimension bottomPanelSize = new Dimension(this.getWidth(), 200);
-        bottomPanel = new JPanel();
+        bottomPanel = new BottomPanel();
         bottomPanel.setPreferredSize(bottomPanelSize);
         bottomPanel.setSize(bottomPanelSize);
         bottomPanel.setMaximumSize(bottomPanelSize);
         bottomPanel.setMinimumSize(bottomPanelSize);
-        bottomPanel.setBackground(new Color(182, 222, 191));
 
         Dimension rightPanelSize = new Dimension(500, this.getHeight());
-        rightPanel = new JPanel();
+        rightPanel = new RightPanel();
         rightPanel.setPreferredSize(rightPanelSize);
         rightPanel.setSize(rightPanelSize);
         rightPanel.setMaximumSize(rightPanelSize);
         rightPanel.setMinimumSize(rightPanelSize);
-        rightPanel.setBackground(new Color(171, 171, 171));
 
         layer0 = new JPanel(new BorderLayout());
         layer0.add(rightPanel, BorderLayout.EAST);
