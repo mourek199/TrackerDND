@@ -22,6 +22,7 @@ public class MainWindow extends JFrame {
         this.setResizable(true);
         this.setVisible(true);
 
+
         Dimension mainPanelSize = new Dimension(this.getSize());
         mainPanel = new JPanel();
         mainPanel.setPreferredSize(mainPanelSize);

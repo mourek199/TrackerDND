@@ -1,6 +1,7 @@
 package UI.Startup;
 
 import UI.Background;
+import UI.CustomImage;
 
 import javax.imageio.ImageIO;
 import javax.sound.sampled.BooleanControl;
@@ -14,9 +15,7 @@ import java.io.IOException;
 public class StartupMenu extends JFrame {
 
     private JPanel panel;
-    private JPanel panel2;
     private StartupButton button;
-    private StartupButton button2;
     private Background bg;
 
     public StartupMenu(){
@@ -29,50 +28,34 @@ public class StartupMenu extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         try {
-            bg = new Background("/StartupScreenBackground.png");
+            bg = new Background("/tapir.png");
             bg.setLayout(new BoxLayout(bg, BoxLayout.Y_AXIS));
             this.setContentPane(bg);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
-        JPanel panel = new JPanel();
-        JPanel panel2 = new JPanel();
-
-        try {
-            File f = new File("res/dndLogo.png");
-            BufferedImage myPicture = ImageIO.read(f);
-            Image scaledImg = myPicture.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
-            JLabel picLabel = new JLabel(new ImageIcon(scaledImg));
-            panel2.add(picLabel);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-
-        bg.add(panel2);
+        panel = new JPanel();
         bg.add(panel);
+
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.setOpaque(false);
 
-        panel2.setLayout(new BoxLayout(panel2, BoxLayout.Y_AXIS));
-        panel2.setOpaque(false);
+        CustomImage dndLogo = new CustomImage("res/dndLogo.png", 200, 200, true);
+        dndLogo.getPicLabel().setAlignmentX(Component.CENTER_ALIGNMENT);
+        CustomImage trackerLogo = new CustomImage("res/TrackerLogo.png", 630, 100, true);
+        trackerLogo.getPicLabel().setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        Dimension panelDimension = new Dimension(30,30);
-        button = new StartupButton("/TrackerLogo.png", "/dndLogo.png", 610,100);
-        button.setAlignmentX(Component.CENTER_ALIGNMENT);
+
         panel.add(Box.createVerticalStrut(10));
+        panel.add(dndLogo.getPicLabel());
+        panel.add(Box.createVerticalStrut(10));
+        panel.add(trackerLogo.getPicLabel());
+
+        button = new StartupButton("/StartButtonLogo.png", "/StartButtonLogo.png", 540/2,160/2);
+        button.setAlignmentX(Component.CENTER_ALIGNMENT);
+        panel.add(Box.createVerticalStrut(200));
         panel.add(button);
-
-        Dimension panel2Dimension = new Dimension(this.getWidth(), 100);
-        panel2.add(Box.createVerticalStrut(10));
-        panel2.setPreferredSize(panel2Dimension);
-        panel2.setAlignmentY(Component.CENTER_ALIGNMENT);
-        panel2.add(new JButton("daaamn"));
-
-
-
-
 
         this.setVisible(true);
     }
