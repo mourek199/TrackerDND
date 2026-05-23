@@ -9,10 +9,10 @@ import java.io.IOException;
 
 public class CustomImage extends JLabel{
 
-    File f;
-    BufferedImage myPicture;
-    Image scaledImage;
-    JLabel picLabel;
+    private File f;
+    private BufferedImage myPicture;
+    private Image scaledImage;
+    private JLabel picLabel;
 
     public CustomImage(String filepath, int width, int height, Boolean smooth){
         try {

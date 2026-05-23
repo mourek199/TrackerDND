@@ -28,7 +28,7 @@ public class StartupMenu extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         try {
-            bg = new Background("/tapir.png");
+            bg = new Background("/startupScreenBackground.png");
             bg.setLayout(new BoxLayout(bg, BoxLayout.Y_AXIS));
             this.setContentPane(bg);
         } catch (Exception e) {
@@ -52,7 +52,7 @@ public class StartupMenu extends JFrame {
         panel.add(Box.createVerticalStrut(10));
         panel.add(trackerLogo.getPicLabel());
 
-        button = new StartupButton("/StartButtonLogo.png", "/StartButtonLogo.png", 540/2,160/2);
+        button = new StartupButton(this,"/StartButtonLogo.png", "/StartButtonLogo.png", 270,80);
         button.setAlignmentX(Component.CENTER_ALIGNMENT);
         panel.add(Box.createVerticalStrut(200));
         panel.add(button);

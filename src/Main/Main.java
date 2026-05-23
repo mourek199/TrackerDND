@@ -4,6 +4,7 @@ import Commands.CmdNextTurn;
 import Creatures.CreatureEnemy;
 import Creatures.CreatureNeutral;
 import GameLogic.CreatureQueue;
+import GameLogic.GameWorld;
 import UI.Startup.StartupMenu;
 
 public class Main {
@@ -20,7 +21,7 @@ public class Main {
 
     public static void main(String[] args) {
         setProperties();
-        CreatureQueue queue = new CreatureQueue();
+        /*CreatureQueue queue = new CreatureQueue();
         System.out.println(queue);
         queue.addToQueue(new CreatureNeutral("Tony"));
         queue.addToQueue(new CreatureEnemy("Elemental"));
@@ -30,6 +31,9 @@ public class Main {
 
         CmdNextTurn cmd1 = new CmdNextTurn(queue);
         cmd1.execute();
-        System.out.println(queue);
+        System.out.println(queue);*/
+
+        GameWorld world = new GameWorld();
+        new StartupMenu();
     }
 }
