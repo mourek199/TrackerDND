@@ -72,7 +72,6 @@ public class MainWindow extends JFrame {
         turnsPanel.setLayout(new BoxLayout(turnsPanel, BoxLayout.Y_AXIS));
         rightPanel.add(turnsPanel);
 
-
         bg.add(leftPanel, BorderLayout.WEST);
         bg.add(rightPanel, BorderLayout.EAST);
         this.setVisible(true);

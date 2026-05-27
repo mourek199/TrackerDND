@@ -1,0 +1,7 @@
+[
+  {
+    "conditionName" : "TEST_COND",
+    "conditionDesc" : "This is a test condition",
+    "conditionIconPath" : "tapir.png"
+  }
+]

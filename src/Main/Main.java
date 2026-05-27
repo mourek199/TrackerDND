@@ -1,6 +1,7 @@
 package Main;
 
 import Commands.CmdNextTurn;
+import Commands.GameConsole;
 import Creatures.CreatureEnemy;
 import Creatures.CreatureNeutral;
 import GameLogic.CreatureQueue;
@@ -21,6 +22,7 @@ public class Main {
 
     public static void main(String[] args) {
         setProperties();
+        new GameConsole().start();
         /*CreatureQueue queue = new CreatureQueue();
         System.out.println(queue);
         queue.addToQueue(new CreatureNeutral("Tony"));
@@ -34,6 +36,7 @@ public class Main {
         System.out.println(queue);*/
 
         GameWorld world = new GameWorld();
+        System.out.println(world.getConditions());
         new StartupMenu();
     }
 }
