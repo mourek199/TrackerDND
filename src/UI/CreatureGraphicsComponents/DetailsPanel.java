@@ -1,8 +1,16 @@
 package UI.CreatureGraphicsComponents;
 
+import Commands.AppConsole;
+import Creatures.Creature;
+
 import javax.swing.*;
 
 public class DetailsPanel extends JPanel {
-    public DetailsPanel() {
+
+    private AppConsole appConsole;
+    private JLabel textPane;
+    private String renderedText;
+
+    public DetailsPanel(AppConsole appConsole, Creature creature) {
     }
 }

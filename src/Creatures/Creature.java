@@ -1,8 +1,10 @@
 package Creatures;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 public abstract class Creature {
     private String name;
     private int type;

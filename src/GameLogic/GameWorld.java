@@ -14,7 +14,10 @@ public class GameWorld {
     public GameWorld() {
         creatureQueue = new CreatureQueue();
         creatureQueue.addToQueue(new CreaturePlayer("tony"));
-        creatureQueue.addToQueue(new CreatureEnemy("mari (goblin)"));
+        creatureQueue.addToQueue(new CreaturePlayer("mari"));
+        creatureQueue.addToQueue(new CreatureEnemy("goblin"));
+        creatureQueue.addToQueue(new CreatureEnemy("Elemental"));
+        creatureQueue.addToQueue(new CreatureNeutral("Sheep"));
         creatureQueue.addToQueue(new CreatureNeutral("goblin"));
     }
 
