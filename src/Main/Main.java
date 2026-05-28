@@ -1,12 +1,6 @@
 package Main;
 
-import Commands.CmdNextTurn;
-import Commands.GameConsole;
-import Creatures.CreatureEnemy;
-import Creatures.CreatureNeutral;
-import GameLogic.CreatureQueue;
-import GameLogic.GameWorld;
-import UI.Startup.StartupMenu;
+import Commands.AppConsole;
 
 public class Main {
 
@@ -22,21 +16,8 @@ public class Main {
 
     public static void main(String[] args) {
         setProperties();
-        new GameConsole().start();
-        /*CreatureQueue queue = new CreatureQueue();
-        System.out.println(queue);
-        queue.addToQueue(new CreatureNeutral("Tony"));
-        queue.addToQueue(new CreatureEnemy("Elemental"));
-        queue.addToQueue(new CreatureNeutral("Borvoooj"));
-        System.out.println(queue);
-        new StartupMenu();
+        AppConsole console = new AppConsole();
+        console.start();
 
-        CmdNextTurn cmd1 = new CmdNextTurn(queue);
-        cmd1.execute();
-        System.out.println(queue);*/
-
-        GameWorld world = new GameWorld();
-        System.out.println(world.getConditions());
-        new StartupMenu();
     }
 }

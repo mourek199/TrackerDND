@@ -1,27 +1,25 @@
 package Commands;
 
-import Commands.Command;
 import GameLogic.GameWorld;
 import UI.Startup.StartupMenu;
 import Utilities.GameData;
+import lombok.Getter;
 
-import java.sql.SQLOutput;
 import java.util.HashMap;
-import java.util.Scanner;
 
 /**
- * This class is used for typing and executing commands.
  * @author Tony
  */
-public class GameConsole {
 
-    private Scanner sc;
+@Getter
+public class AppConsole {
+
     private GameData gameData = new GameData();
     private GameWorld world = new GameWorld();
     private HashMap<String, Command> availableCommands;
     private boolean shouldExit;
 
-    public GameConsole() {
+    public AppConsole() {
         shouldExit = false;
         availableCommands = new HashMap<>();
     }
@@ -32,7 +30,7 @@ public class GameConsole {
     public void innit(){
         availableCommands.put("nextTurn", new CmdNextTurn(world.getCreatureQueue()));
         loadStuff();
-        new StartupMenu();
+        new StartupMenu(this);
     }
 
     /**
@@ -45,23 +43,17 @@ public class GameConsole {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
 
     /**
      * Scans for input and executes desired command
      */
-    public void execute(){
-
+    public void execute(String commandName){
+        availableCommands.get(commandName).execute();
     }
 
     public void start(){
         innit();
-        do {
-            execute();
-        } while (true);
     }
-
-
 }
 

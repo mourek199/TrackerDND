@@ -12,7 +12,9 @@ public class CmdNextTurn implements Command{
 
     @Override
     public String execute() {
+        System.out.println("NEW TURN STARTED");
         creatureQueue.nextTurn();
+        System.out.println(creatureQueue);
         return "";
     }
 
