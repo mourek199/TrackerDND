@@ -5,6 +5,8 @@ import Conditions.CreatureCondition;
 import Creatures.Creature;
 import UI.CustomButton;
 import UI.CustomImage;
+import UI.WindowMain.MainWindow;
+
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +15,12 @@ public class ConditionPanel extends JPanel {
     private AppConsole appConsole;
     private Creature creature;
     private List<CreatureCondition> graphicConditions;
+    private MainWindow mainWindow;
 
 
-    public ConditionPanel(AppConsole appConsole, Creature creature) {
+    public ConditionPanel(MainWindow mainWindow, AppConsole appConsole, Creature creature) {
         this.creature = creature;
+        this.mainWindow = mainWindow;
         graphicConditions = new ArrayList<>();
         resetList(graphicConditions);
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
@@ -29,7 +33,7 @@ public class ConditionPanel extends JPanel {
     public void reloadConditions() {
         CustomButton addedButton;
         for (CreatureCondition condition : graphicConditions) {
-            addedButton = new ConditionButton(condition, creature, condition.getConditionIconPath(), condition.getConditionIconPath(), 50,50);
+            addedButton = new ConditionButton(mainWindow,this, condition, creature, condition.getConditionIconPath(), condition.getConditionIconPath(), 100,100);
             add(addedButton);
             add(Box.createHorizontalStrut(5));
         }

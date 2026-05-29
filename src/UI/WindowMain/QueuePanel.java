@@ -1,6 +1,7 @@
 package UI.WindowMain;
 
 import Commands.AppConsole;
+import Conditions.CreatureCondition;
 import Creatures.Creature;
 import UI.CreatureGraphics;
 
@@ -13,9 +14,10 @@ public class QueuePanel extends JPanel {
 
     private JPanel contentPanel;
     private JScrollPane scrollPane;
+    private MainWindow mainWindow;
 
-    public QueuePanel(AppConsole appConsole) {
-
+    public QueuePanel(MainWindow mainWindow, AppConsole appConsole) {
+        this.mainWindow = mainWindow;
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         contentPanel = new JPanel();
         contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
@@ -31,10 +33,14 @@ public class QueuePanel extends JPanel {
         contentPanel.removeAll();
         List<Creature> tempList = appConsole.getWorld().getCreatureQueue().convertToList(appConsole.getWorld().getCreatureQueue().getQueue());
         JPanel addedPanel = null;
-        for (int i = 0; i < 10; i++) {
+        for (Creature creature : appConsole.getWorld().getCreatureQueue().getQueue()){
+            contentPanel.add(new CreatureGraphics(mainWindow, appConsole, creature));
+        }
+
+        /*for (int i = 0; i < 10; i++) {
 
             if (i<tempList.size()){
-                contentPanel.add(new CreatureGraphics(appConsole, tempList.get(i)));
+                contentPanel.add(new CreatureGraphics(mainWindow,appConsole, tempList.get(i)));
             }else{
                 addedPanel = new JPanel();
                 addedPanel.setLayout(new BorderLayout());
@@ -44,7 +50,7 @@ public class QueuePanel extends JPanel {
                 contentPanel.add(addedPanel);
             }
 
-        }
+        }*/
         contentPanel.revalidate();
         contentPanel.repaint();
     }

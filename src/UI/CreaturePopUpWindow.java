@@ -1,5 +1,7 @@
 package UI;
 
+import CreaturePopUpComponents.AddConditionButton;
+import CreaturePopUpComponents.CreatureInfoPanel;
 import Creatures.Creature;
 
 import javax.swing.*;
@@ -9,16 +11,15 @@ public class CreaturePopUpWindow extends JFrame {
     private Creature creature;
     private Background bg;
     private JPanel panel;
-    private JPanel creatureStats;
+    private AddConditionButton addConditionButton;
+    private CreatureInfoPanel creatureStats;
 
     public CreaturePopUpWindow(Creature creature){
         super(creature.getName());
         this.creature = creature;
-
         this.setSize(500, 300);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
         try {

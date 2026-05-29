@@ -8,9 +8,11 @@ import java.util.*;
 @Getter
 public class CreatureQueue {
     private Queue<Creature> queue = new LinkedList();
+    private int turnNumber;
 
     public Creature addToQueue(Creature creature){
         queue.add(creature);
+        reloadQueue(queue);
         return creature;
     }
     public Creature addToQueue(Creature creature, int initiative){
@@ -21,6 +23,7 @@ public class CreatureQueue {
 
     public void nextTurn(){
         queue.add(queue.remove());
+        turnNumber++;
     }
 
     public List<Creature> convertToList(Queue<Creature> convertedQueue){
@@ -29,7 +32,7 @@ public class CreatureQueue {
         return list;
     }
     public List<Creature> sortList(List<Creature> list){
-        Collections.sort(list, Comparator.comparing(Creature:: getInitiative));
+        Collections.sort(list, Comparator.comparing(Creature:: getInitiative).reversed());
         return list;
     }
 
@@ -41,6 +44,10 @@ public class CreatureQueue {
 
     public Queue<Creature> reloadQueue(Queue<Creature> reloadedQueue){
         return listToQueue(sortList(convertToList(reloadedQueue)));
+    }
+
+    public void addToExistingQueue(CreatureQueue creatureQueue, Creature creature){
+        creatureQueue.convertToList(creatureQueue.getQueue());
     }
 
     @Override

@@ -29,6 +29,7 @@ public class GameWorld {
         creatureQueue.addToQueue(new CreatureEnemy("Warg"), 9);
         creatureQueue.addToQueue(new CreatureEnemy("Pig"));
         creatureQueue.addToQueue(new CreatureNeutral("Gerda"), 19);
+
     }
 
     public HashMap buildConditionMap(){
@@ -36,13 +37,5 @@ public class GameWorld {
             mapConditions.put(condition.getConditionName(), condition);
         }
         return mapConditions;
-    }
-
-    public CreatureCondition[] getConditions() {
-        return conditions;
-    }
-
-    public CreatureQueue getCreatureQueue() {
-        return creatureQueue;
     }
 }

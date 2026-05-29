@@ -34,7 +34,7 @@ public class MainWindow extends JFrame {
         }
 
         leftPanel = new LeftPanel();
-        queuePanel = new QueuePanel(appConsole);
+        queuePanel = new QueuePanel(this, appConsole);
         rightPanel = new RightPanel();
         turnsPanel = new TurnsPanel(appConsole, this);
 

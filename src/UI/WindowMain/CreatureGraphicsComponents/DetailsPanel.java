@@ -2,6 +2,7 @@ package UI.WindowMain.CreatureGraphicsComponents;
 
 import Commands.AppConsole;
 import Creatures.Creature;
+import UI.WindowMain.MainWindow;
 import lombok.Getter;
 
 import javax.swing.*;
@@ -16,11 +17,13 @@ public class DetailsPanel extends JPanel {
     @Getter
     private ConditionPanel conditionPanel;
     private CreatureSettingsPanel settingsPanel;
+    private MainWindow mainWindow;
 
-    public DetailsPanel(AppConsole appConsole, Creature creature) {
+    public DetailsPanel(MainWindow mainWindow,AppConsole appConsole, Creature creature) {
+        this.mainWindow = mainWindow;
         this.creature = creature;
         setLayout(new BorderLayout());
-        conditionPanel = new ConditionPanel(appConsole, creature);
+        conditionPanel = new ConditionPanel(mainWindow, appConsole, creature);
         settingsPanel = new CreatureSettingsPanel(creature);
         this.add(conditionPanel, BorderLayout.WEST);
         this.add(settingsPanel, BorderLayout.EAST);

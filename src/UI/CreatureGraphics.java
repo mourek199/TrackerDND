@@ -5,6 +5,7 @@ import Creatures.Creature;
 import UI.WindowMain.CreatureGraphicsComponents.DetailsPanel;
 import UI.WindowMain.CreatureGraphicsComponents.InitPanel;
 import UI.WindowMain.CreatureGraphicsComponents.TextPanel;
+import UI.WindowMain.MainWindow;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,13 +17,15 @@ public class CreatureGraphics extends JPanel {
     private AppConsole appConsole;
     private String CreatureType;
     private Creature creature;
+    private MainWindow mainWindow;
 
-    public CreatureGraphics(AppConsole appConsole, Creature creature) {
+    public CreatureGraphics(MainWindow mainWindow, AppConsole appConsole, Creature creature) {
+        this.mainWindow = mainWindow;
         this.appConsole = appConsole;
         this.creature = creature;
         initPanel = new InitPanel(appConsole, creature);
         textPanel = new TextPanel(appConsole, creature);
-        detailsPanel = new DetailsPanel(appConsole, creature);
+        detailsPanel = new DetailsPanel(mainWindow, appConsole, creature);
 
         setLayout(new BorderLayout());
         setPreferredSize(new Dimension(700, 30));
