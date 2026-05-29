@@ -1,21 +1,18 @@
-package UI.CreatureGraphicsComponents;
+package UI.WindowMain.CreatureGraphicsComponents;
 
 import Commands.AppConsole;
 import Creatures.Creature;
-import UI.CustomButton;
-import UI.CustomImage;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class InitPanel extends JPanel {
-
-    private String renderedText;
+public class TextPanel extends JPanel {
     private AppConsole appConsole;
     private JLabel textPane;
+    private String renderedText;
 
-    public InitPanel(AppConsole appConsole, Creature creature) {
-        renderedText = String.valueOf(creature.getInitiative());
+    public TextPanel(AppConsole appConsole, Creature creature) {
+        renderedText = creature.getName();
         this.appConsole = appConsole;
         add(textPane = new JLabel(renderedText));
         textPane.setFont(new Font("Cascadia Code", Font.BOLD, 32));

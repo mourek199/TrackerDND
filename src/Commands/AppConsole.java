@@ -1,5 +1,7 @@
 package Commands;
 
+import Conditions.CreatureCondition;
+import Creatures.Creature;
 import GameLogic.GameWorld;
 import UI.Startup.StartupMenu;
 import Utilities.GameData;
@@ -28,8 +30,13 @@ public class AppConsole {
      *Initializes the game and creates the commands
      */
     public void innit(){
-        availableCommands.put("nextTurn", new CmdNextTurn(world.getCreatureQueue()));
+        availableCommands.put("nextTurn", new CmdNextTurn(world.getCreatureQueue(), world));
         loadStuff();
+        world.buildConditionMap();
+        for(Creature creature : world.getCreatureQueue().getQueue()){
+            creature.addCondition(world.getMapConditions().get("Charmed"));
+            creature.addCondition(world.getMapConditions().get("Blinded"));
+        }
         new StartupMenu(this);
     }
 
@@ -39,7 +46,6 @@ public class AppConsole {
     public void loadStuff(){
         try {
             gameData.loadConditions(world);
-
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

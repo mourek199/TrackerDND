@@ -2,9 +2,9 @@ package UI;
 
 import Commands.AppConsole;
 import Creatures.Creature;
-import UI.CreatureGraphicsComponents.DetailsPanel;
-import UI.CreatureGraphicsComponents.InitPanel;
-import UI.CreatureGraphicsComponents.TextPanel;
+import UI.WindowMain.CreatureGraphicsComponents.DetailsPanel;
+import UI.WindowMain.CreatureGraphicsComponents.InitPanel;
+import UI.WindowMain.CreatureGraphicsComponents.TextPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,16 +22,22 @@ public class CreatureGraphics extends JPanel {
         this.creature = creature;
         initPanel = new InitPanel(appConsole, creature);
         textPanel = new TextPanel(appConsole, creature);
+        detailsPanel = new DetailsPanel(appConsole, creature);
 
         setLayout(new BorderLayout());
-        setPreferredSize(new Dimension(400, 50));
-        setBorder(BorderFactory.createLineBorder(Color.yellow));
+        setPreferredSize(new Dimension(700, 30));
+        setBorder(BorderFactory.createLineBorder(new Color(238, 238, 238), 2));
         setBackground(detectBackground());
         setOpaque(true);
 
         add(initPanel, BorderLayout.WEST);
         add(textPanel, BorderLayout.CENTER);
-        
+        add(detailsPanel, BorderLayout.EAST);
+
+        initPanel.setAlignmentY(CENTER_ALIGNMENT);
+        textPanel.setAlignmentY(CENTER_ALIGNMENT);
+        detailsPanel.setAlignmentY(CENTER_ALIGNMENT);
+
     }
 
     private Color detectBackground(){

@@ -3,5 +3,40 @@
     "conditionName" : "TEST_COND",
     "conditionDesc" : "This is a test condition",
     "conditionIconPath" : "tapir.png"
+  },
+  {
+    "conditionName" : "Blinded",
+    "conditionDesc" : "A blinded creature can’t see and automatically fails any ability check that requires sight.",
+    "conditionIconPath" : "/ConditionsIcons/Blinded.png"
+  },
+  {
+    "conditionName" : "Deafened",
+    "conditionDesc" : "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+    "conditionIconPath" : "/ConditionsIcons/Deafened.png"
+  },
+  {
+    "conditionName" : "Charmed",
+    "conditionDesc" : "A charmed creature can’t attack the charmer or target the charmer with harmful abilities or magical effects.",
+    "conditionIconPath" : "/ConditionsIcons/Charmed.png"
+  },
+  {
+    "conditionName" : "Frightened",
+    "conditionDesc" : "A frightened creature has disadvantage on ability checks and attack rolls while the source of its fear is within line of sight.",
+    "conditionIconPath" : "/ConditionsIcons/Frightened.png"
+  },
+  {
+    "conditionName" : "Invisible",
+    "conditionDesc" : "An invisible creature is impossible to see without the aid of magic or a special sense.",
+    "conditionIconPath" : "/ConditionsIcons/Invisible.png"
+  },
+  {
+    "conditionName" : "Flying",
+    "conditionDesc" : "While flying, you fall if you have the Incapacitated or Prone condition",
+    "conditionIconPath" : "/ConditionsIcons/Flying.png"
+  },
+  {
+    "conditionName" : "Poisoned",
+    "conditionDesc" : "A poisoned creature has disadvantage on attack rolls and ability checks.",
+    "conditionIconPath" : "/ConditionsIcons/Poisoned.png"
   }
 ]

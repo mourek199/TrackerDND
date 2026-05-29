@@ -9,19 +9,8 @@ import java.awt.*;
 
 public class MainWindow extends JFrame {
 
-    /*
-    private JPanel mainPanel;
-    private LeftPanel leftPanel;
     private RightPanel rightPanel;
-    private BottomPanel bottomPanel;
-    private JLayeredPane myLayerPane;
-    private JPanel layer0;
-    private JPanel layer1;
-    private CustomButton newTurnButton;
-     */
-
-    private JPanel rightPanel;
-    private JPanel leftPanel;
+    private LeftPanel leftPanel;
     private QueuePanel queuePanel;
     private JPanel turnsPanel;
     private Background bg;
@@ -77,9 +66,8 @@ public class MainWindow extends JFrame {
         bg.add(rightPanel, BorderLayout.EAST);
         this.setVisible(true);
 
-
     }
     public void reloadMainWindow(){
-        queuePanel.reloadQueue();
+        queuePanel.reloadQueue(appConsole);
     }
 }
