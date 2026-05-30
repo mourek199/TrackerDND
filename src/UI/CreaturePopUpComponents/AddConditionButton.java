@@ -1,8 +1,6 @@
-package CreaturePopUpComponents;
+package UI.CreaturePopUpComponents;
 
-import Commands.AppConsole;
 import Creatures.Creature;
-import GameLogic.CreatureQueue;
 import UI.CustomButton;
 
 public class AddConditionButton extends CustomButton {

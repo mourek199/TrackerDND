@@ -24,7 +24,7 @@ public class DetailsPanel extends JPanel {
         this.creature = creature;
         setLayout(new BorderLayout());
         conditionPanel = new ConditionPanel(mainWindow, appConsole, creature);
-        settingsPanel = new CreatureSettingsPanel(creature);
+        settingsPanel = new CreatureSettingsPanel(creature, mainWindow);
         this.add(conditionPanel, BorderLayout.WEST);
         this.add(settingsPanel, BorderLayout.EAST);
         this.setOpaque(false);

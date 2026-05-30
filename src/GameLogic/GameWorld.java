@@ -18,7 +18,7 @@ public class GameWorld {
 
     public GameWorld() {
         mapConditions = new HashMap<>();
-        conditions = new CreatureCondition[8];
+        conditions = new CreatureCondition[11];
         creatureQueue = new CreatureQueue();
         creatureQueue.addToQueue(new CreaturePlayer("tony"), 5);
         creatureQueue.addToQueue(new CreaturePlayer("mari"));

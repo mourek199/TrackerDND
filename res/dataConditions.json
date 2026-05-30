@@ -38,5 +38,22 @@
     "conditionName" : "Poisoned",
     "conditionDesc" : "A poisoned creature has disadvantage on attack rolls and ability checks.",
     "conditionIconPath" : "/ConditionsIcons/Poisoned.png"
+  },
+  {
+    "conditionName" : "Concentrating",
+    "conditionDesc" : "Concentrating spell gets cancelled if you take damage.",
+    "conditionIconPath" : "/ConditionsIcons/Concentrating.png"
+  }
+,
+  {
+    "conditionName" : "Grappled",
+    "conditionDesc" : "Your speed is 0 and you have a disadvantage against the creature grappling you",
+    "conditionIconPath" : "/ConditionsIcons/Grappled.png"
+  }
+,
+  {
+    "conditionName" : "Smirk",
+    "conditionDesc" : "Your charisma is out of this world",
+    "conditionIconPath" : "/ConditionsIcons/Grappled.png"
   }
 ]

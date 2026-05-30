@@ -24,7 +24,6 @@ public class MainWindow extends JFrame {
         this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-
         try {
             bg = new Background("/GradientBackground.png");
             bg.setLayout(new BorderLayout());
@@ -41,7 +40,7 @@ public class MainWindow extends JFrame {
         leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS));
         leftPanel.setOpaque(false);
         //CustomImage customImage = new CustomImage("/tapir.png", 40,40, true);
-        CustomImage dndLogo = new CustomImage("res/tapir.png", 500, 200, true);
+        CustomImage dndLogo = new CustomImage("res/tapir.png", 500, 300, true);
         leftPanel.setBorder(BorderFactory.createLineBorder(Color.black));
         leftPanel.setMaximumSize(new Dimension(leftPanel.getMaximumSize().width, Integer.MAX_VALUE));
 
@@ -51,6 +50,8 @@ public class MainWindow extends JFrame {
         leftPanel.add(queuePanel);
         leftPanel.add(dndLogo.getPicLabel());
 
+        CustomImage arrow = new CustomImage("res/arrowUp.png", 80, 800, true);
+        add(arrow.getPicLabel());
 
         rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
         rightPanel.setOpaque(false);

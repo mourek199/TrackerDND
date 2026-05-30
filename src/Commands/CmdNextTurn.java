@@ -18,8 +18,6 @@ public class CmdNextTurn implements Command{
     public String execute() {
         System.out.println("NEW TURN STARTED");
         creatureQueue.nextTurn();
-        System.out.println(creatureQueue);
-        creatureQueue.getQueue().peek().addCondition(gameWorld.getMapConditions().get("Flying"));
         return "";
     }
 

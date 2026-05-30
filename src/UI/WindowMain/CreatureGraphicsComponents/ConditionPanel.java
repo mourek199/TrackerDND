@@ -33,7 +33,7 @@ public class ConditionPanel extends JPanel {
     public void reloadConditions() {
         CustomButton addedButton;
         for (CreatureCondition condition : graphicConditions) {
-            addedButton = new ConditionButton(mainWindow,this, condition, creature, condition.getConditionIconPath(), condition.getConditionIconPath(), 100,100);
+            addedButton = new ConditionButton(mainWindow,this, condition, creature, condition.getConditionIconPath(), condition.getConditionIconPath(), 80,80);
             add(addedButton);
             add(Box.createHorizontalStrut(5));
         }
