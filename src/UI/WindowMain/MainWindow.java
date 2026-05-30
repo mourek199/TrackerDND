@@ -71,4 +71,8 @@ public class MainWindow extends JFrame {
     public void reloadMainWindow(){
         queuePanel.reloadQueue(appConsole);
     }
+
+    public AppConsole getAppConsole() {
+        return appConsole;
+    }
 }

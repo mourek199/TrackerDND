@@ -10,18 +10,15 @@ public class CreatureInfoPanel extends JPanel {
     private Creature creature;
     private CreatureInfoLabel label;
 
-    private String parameter;
-
     public CreatureInfoPanel(Creature creature, String parameter, MainWindow mainWindow) {
         this.creature = creature;
-        this.parameter = parameter;
         this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
         this.label = new CreatureInfoLabel(creature, parameter);
-        CreatureInfoSaveButton saveButton = new CreatureInfoSaveButton(creature, label,"/play.png", "/play.png", 40,40, mainWindow);
+        label.setMaximumSize(new Dimension(500,50));
+        this.setMaximumSize(new Dimension(500,50));
+        CreatureInfoSaveButton saveButton = new CreatureInfoSaveButton(creature, label,"/play.png", "/play.png", 20,20, mainWindow, parameter);
         add(label);
         add(saveButton);
-
-
         setOpaque(false);
     }
 

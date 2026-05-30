@@ -16,14 +16,15 @@ public class CreatureInfoLabel extends JPanel {
         this.creature = creature;
 
         textArea = new TextArea();
+        setOpaque(false);
 
         switch (parameter){
             case "name" -> {
                 textArea.setText(creature.getName());
             }
 
-            case "initiative" -> {
-                textArea.setText(String.valueOf(creature.getInitiative()));
+            case "init" -> {
+                textArea.setText(String.valueOf(creature.getInitiative()).trim());
             }
         }
 

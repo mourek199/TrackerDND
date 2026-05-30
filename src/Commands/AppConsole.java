@@ -33,10 +33,6 @@ public class AppConsole {
         availableCommands.put("nextTurn", new CmdNextTurn(world.getCreatureQueue(), world));
         loadStuff();
         world.buildConditionMap();
-        for(Creature creature : world.getCreatureQueue().getQueue()){
-            creature.addCondition(world.getMapConditions().get("Charmed"));
-            creature.addCondition(world.getMapConditions().get("Blinded"));
-        }
         new StartupMenu(this);
     }
 

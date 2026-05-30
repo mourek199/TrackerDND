@@ -6,6 +6,10 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.net.URL;
 
+/**
+ * A custom button class
+ * @author Matej Pospisil, modified by Tony
+ */
 public class CustomButton extends JButton {
 
     private Image img;
@@ -15,7 +19,6 @@ public class CustomButton extends JButton {
     private boolean clicked;
 
     public CustomButton() {
-
     }
 
     public CustomButton(String imgFile, String clickedImg, int width, int height) {
@@ -59,11 +62,11 @@ public class CustomButton extends JButton {
 
     private int calculateOffset() {
         if (clicked) {
-            return 5;
+            return 3;
         }
         if (hoovered) {
             System.out.println("test");
-            return 5;
+            return 3;
         }
         return 1;
     }

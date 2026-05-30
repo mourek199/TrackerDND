@@ -2,7 +2,7 @@
   {
     "conditionName" : "TEST_COND",
     "conditionDesc" : "This is a test condition",
-    "conditionIconPath" : "tapir.png"
+    "conditionIconPath" : "/tapir.png"
   },
   {
     "conditionName" : "Blinded",
@@ -54,6 +54,6 @@
   {
     "conditionName" : "Smirk",
     "conditionDesc" : "Your charisma is out of this world",
-    "conditionIconPath" : "/ConditionsIcons/Grappled.png"
+    "conditionIconPath" : "/ConditionsIcons/Smirk.png"
   }
 ]

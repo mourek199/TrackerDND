@@ -14,6 +14,7 @@ public class CreatureSettingsButton extends CustomButton {
         super(imgFile, clickedImg, width, height);
         this.creature = creature;
         this.mainWindow = mainWindow;
+        this.setToolTipText("Creature Settings");
         addActionListener(e -> {
             clicked();
         });
