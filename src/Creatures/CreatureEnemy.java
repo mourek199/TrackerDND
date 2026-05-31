@@ -1,5 +1,9 @@
 package Creatures;
 
+/**
+ * creature enemy type
+ * @author Tony
+ */
 public class CreatureEnemy extends Creature{
 
     public CreatureEnemy(String name) {

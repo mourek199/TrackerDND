@@ -4,6 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
 
+/**
+ * A background panel for other panels
+ * @author Matej Pospisil
+ */
     public class Background extends JPanel {
         private Image img;
 

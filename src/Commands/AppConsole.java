@@ -10,6 +10,7 @@ import lombok.Getter;
 import java.util.HashMap;
 
 /**
+ * manages the app cycle
  * @author Tony
  */
 

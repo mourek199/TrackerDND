@@ -1,19 +1,20 @@
 package Commands;
 
-import Conditions.CreatureCondition;
+import Creatures.Creature;
 import GameLogic.CreatureQueue;
 import GameLogic.GameWorld;
 
 /**
- * starts next turn
+ * adds new entity
  * @author Tony
  */
-public class CmdNextTurn implements Command{
+public class CmdAddNewCreature implements Command{
 
     GameWorld gameWorld;
     CreatureQueue creatureQueue;
+    Creature fakeCreature;
 
-    public CmdNextTurn(CreatureQueue creatureQueue, GameWorld gameWorld) {
+    public CmdAddNewCreature(CreatureQueue creatureQueue, GameWorld gameWorld) {
         this.creatureQueue = creatureQueue;
         this.gameWorld = gameWorld;
     }
@@ -23,8 +24,7 @@ public class CmdNextTurn implements Command{
      */
     @Override
     public String execute() {
-        System.out.println("NEW TURN STARTED");
-        creatureQueue.nextTurn();
+
         return "";
     }
 
@@ -33,3 +33,4 @@ public class CmdNextTurn implements Command{
         return false;
     }
 }
+

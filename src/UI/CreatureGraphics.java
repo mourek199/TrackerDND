@@ -10,6 +10,9 @@ import UI.WindowMain.MainWindow;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * This panel is a component inside the Queue panel scrollbar. A creature graphics contains creature initiative, name conditions and settings
+ */
 public class CreatureGraphics extends JPanel {
     private InitPanel initPanel;
     private TextPanel textPanel;

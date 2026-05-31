@@ -7,12 +7,19 @@ import UI.CustomImage;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * The main panel. This is the UI that the user is looking at 99% of the time. Contains queue, description panels and other buttons
+ */
 public class MainWindow extends JFrame {
 
     private RightPanel rightPanel;
     private LeftPanel leftPanel;
     private QueuePanel queuePanel;
-    private JPanel turnsPanel;
+    private JPanel centerPanel;
+    private LocationDescriptionPanel locationDescriptionPanel;
+    private FiguresDescriptionPanel figuresDescriptionPanel;
+    private OptionsPanel optionsPanel;
+    private TurnsPanel turnsPanel;
     private Background bg;
     private AppConsole appConsole;
 
@@ -36,28 +43,27 @@ public class MainWindow extends JFrame {
         queuePanel = new QueuePanel(this, appConsole);
         rightPanel = new RightPanel();
         turnsPanel = new TurnsPanel(appConsole, this);
+        centerPanel = new JPanel();
+        locationDescriptionPanel = new LocationDescriptionPanel();
+        figuresDescriptionPanel = new FiguresDescriptionPanel(appConsole);
+        optionsPanel = new OptionsPanel(appConsole, this);
 
-        leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS));
-        leftPanel.setOpaque(false);
-        //CustomImage customImage = new CustomImage("/tapir.png", 40,40, true);
-        CustomImage dndLogo = new CustomImage("res/tapir.png", 500, 300, true);
-        leftPanel.setBorder(BorderFactory.createLineBorder(Color.black));
-        leftPanel.setMaximumSize(new Dimension(leftPanel.getMaximumSize().width, Integer.MAX_VALUE));
+        centerPanel.setOpaque(false);
+        centerPanel.setLayout(new BorderLayout());
+        centerPanel.setMaximumSize(new Dimension(Integer.MAX_VALUE, 500));
+        centerPanel.add(figuresDescriptionPanel, BorderLayout.SOUTH);
 
-        queuePanel.setLayout(new BoxLayout(queuePanel, BoxLayout.X_AXIS));
+        queuePanel.setMinimumSize(new Dimension(0, 800));
+        setPreferredSize(new Dimension(0, 800));
         queuePanel.setOpaque(false);
 
-        leftPanel.add(queuePanel);
-        leftPanel.add(dndLogo.getPicLabel());
+        leftPanel.add(queuePanel, BorderLayout.CENTER);
+        leftPanel.add(locationDescriptionPanel, BorderLayout.SOUTH);
 
-        CustomImage arrow = new CustomImage("res/arrowUp.png", 80, 800, true);
-        add(arrow.getPicLabel());
-
-        rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
-        rightPanel.setOpaque(false);
-        CustomImage dndLogo2 = new CustomImage("res/tapir.png", 200, 200, true);
-        rightPanel.add(dndLogo2.getPicLabel());
+        rightPanel.add(optionsPanel);
         rightPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+        rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
+        rightPanel.setBackground(new Color(93, 147, 70));
         rightPanel.setMaximumSize(new Dimension(rightPanel.getMaximumSize().width, Integer.MAX_VALUE));
 
         turnsPanel.setLayout(new BoxLayout(turnsPanel, BoxLayout.Y_AXIS));
@@ -65,11 +71,13 @@ public class MainWindow extends JFrame {
 
         bg.add(leftPanel, BorderLayout.WEST);
         bg.add(rightPanel, BorderLayout.EAST);
+        bg.add(centerPanel, BorderLayout.CENTER);
         this.setVisible(true);
 
     }
     public void reloadMainWindow(){
         queuePanel.reloadQueue(appConsole);
+        turnsPanel.refresh();
     }
 
     public AppConsole getAppConsole() {

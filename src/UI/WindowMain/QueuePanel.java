@@ -15,7 +15,14 @@ public class QueuePanel extends JPanel {
     private JPanel contentPanel;
     private JScrollPane scrollPane;
     private MainWindow mainWindow;
+    private JPanel header;
+    private JLabel headerText;
 
+    /**
+     *
+     * @param mainWindow
+     * @param appConsole
+     */
     public QueuePanel(MainWindow mainWindow, AppConsole appConsole) {
         this.mainWindow = mainWindow;
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -23,7 +30,21 @@ public class QueuePanel extends JPanel {
         contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
         contentPanel.setBackground(new Color(229, 141, 141));
         scrollPane = new JScrollPane(contentPanel);
+
+        header = new JPanel();
+        header.setBackground(new Color(0, 0, 0));
+        header.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        header.setPreferredSize(new Dimension(0, 50));
+        header.setMaximumSize(new Dimension(Integer.MAX_VALUE, 50));
+        header.setMinimumSize(new Dimension(0, 50));
+        headerText = new JLabel("CREATURE QUEUE");
+        headerText.setFont(new Font("Candara", Font.BOLD, 32));
+        headerText.setForeground(new Color(255, 255, 255));
+
+        header.add(headerText);
+        add(header);
         add(scrollPane);
+
 
         reloadQueue(appConsole);
     }
@@ -37,20 +58,6 @@ public class QueuePanel extends JPanel {
             contentPanel.add(new CreatureGraphics(mainWindow, appConsole, creature));
         }
 
-        /*for (int i = 0; i < 10; i++) {
-
-            if (i<tempList.size()){
-                contentPanel.add(new CreatureGraphics(mainWindow,appConsole, tempList.get(i)));
-            }else{
-                addedPanel = new JPanel();
-                addedPanel.setLayout(new BorderLayout());
-                addedPanel.setPreferredSize(new Dimension(700, 30));
-                addedPanel.setOpaque(false);
-
-                contentPanel.add(addedPanel);
-            }
-
-        }*/
         contentPanel.revalidate();
         contentPanel.repaint();
     }

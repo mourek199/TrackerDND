@@ -65,7 +65,6 @@ public class CustomButton extends JButton {
             return 3;
         }
         if (hoovered) {
-            System.out.println("test");
             return 3;
         }
         return 1;

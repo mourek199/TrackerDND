@@ -7,6 +7,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * my class used to create an image.
+ */
 public class CustomImage extends JLabel{
 
     private File f;

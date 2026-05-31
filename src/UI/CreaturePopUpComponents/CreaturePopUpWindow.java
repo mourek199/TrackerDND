@@ -13,6 +13,7 @@ public class CreaturePopUpWindow extends JDialog {
     private JPanel panel;
     private MainWindow mainWindow;
     private ConditionPicker conditionPicker;
+    private CreatureTypePicker creatureTypePicker;
 
     public CreaturePopUpWindow(Creature creature, MainWindow mainWindow){
         super(mainWindow, creature.getName(), true);
@@ -22,7 +23,6 @@ public class CreaturePopUpWindow extends JDialog {
         setResizable(false);
         setLocationRelativeTo(mainWindow);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-
 
         panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
@@ -35,12 +35,15 @@ public class CreaturePopUpWindow extends JDialog {
         CreatureInfoPanel statName = new CreatureInfoPanel(creature, "name", mainWindow);
         CreatureInfoPanel statInit = new CreatureInfoPanel(creature, "init", mainWindow);
 
+        creatureTypePicker = new CreatureTypePicker(mainWindow, creature);
         conditionPicker = new ConditionPicker(mainWindow, creature);
         panel.add(propertiesLabel);
         panel.add(statName);
         panel.add(statInit);
         panel.add(Box.createVerticalStrut(5));
         panel.add(conditionPicker);
+        panel.add(Box.createVerticalStrut(5));
+        panel.add(creatureTypePicker);
 
 
         try {
@@ -54,10 +57,5 @@ public class CreaturePopUpWindow extends JDialog {
         bg.add(panel, BorderLayout.NORTH);
 
         setVisible(true);
-    }
-
-    public void saveAndClose(){
-        MainWindow mainWindow;
-        this.dispose();
     }
 }

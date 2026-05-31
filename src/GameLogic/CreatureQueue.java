@@ -12,18 +12,23 @@ public class CreatureQueue {
 
     public Creature addToQueue(Creature creature){
         queue.add(creature);
+        creature.setInitiative(0);
         reloadQueue(queue);
         return creature;
     }
     public Creature addToQueue(Creature creature, int initiative){
         creature.setInitiative(initiative);
         queue.add(creature);
+        reloadQueue(queue);
         return creature;
     }
 
     public void nextTurn(){
-        queue.add(queue.remove());
-        turnNumber++;
+        if (!queue.isEmpty()){
+            queue.add(queue.remove());
+            turnNumber++;
+            System.out.println(turnNumber);
+        }
     }
 
     public List<Creature> convertToList(Queue<Creature> convertedQueue){

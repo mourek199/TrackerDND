@@ -11,6 +11,5 @@ public class RightPanel extends JPanel {
 
     public RightPanel(){
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-
     }
 }
