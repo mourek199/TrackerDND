@@ -19,7 +19,7 @@ public class QueuePanel extends JPanel {
     private JLabel headerText;
 
     /**
-     *
+     * Displays the queue with all playing creatures
      * @param mainWindow
      * @param appConsole
      */
@@ -28,7 +28,7 @@ public class QueuePanel extends JPanel {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         contentPanel = new JPanel();
         contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
-        contentPanel.setBackground(new Color(229, 141, 141));
+        contentPanel.setBackground(new Color(89, 119, 201));
         scrollPane = new JScrollPane(contentPanel);
 
         header = new JPanel();

@@ -1,30 +1,26 @@
 package Commands;
 
 import Creatures.Creature;
+import Creatures.CreatureNeutral;
 import GameLogic.CreatureQueue;
-import GameLogic.GameWorld;
 
 /**
- * adds new entity
+ * Adds a new entity.
  * @author Tony
  */
-public class CmdAddNewCreature implements Command{
+public class CmdAddNewCreature implements Command {
 
-    GameWorld gameWorld;
-    CreatureQueue creatureQueue;
-    Creature fakeCreature;
+    private final CreatureQueue creatureQueue;
 
-    public CmdAddNewCreature(CreatureQueue creatureQueue, GameWorld gameWorld) {
-        this.creatureQueue = creatureQueue;
-        this.gameWorld = gameWorld;
+    public CmdAddNewCreature(AppConsole appConsole) {
+        this.creatureQueue = appConsole.getWorld().getCreatureQueue();
     }
 
-    /**
-     * starts next turn
-     */
     @Override
     public String execute() {
-
+        Creature creature = new CreatureNeutral("NEW CREATURE");
+        creature.setInitiative(0);
+        creatureQueue.addToQueue(creature);
         return "";
     }
 
@@ -33,4 +29,3 @@ public class CmdAddNewCreature implements Command{
         return false;
     }
 }
-

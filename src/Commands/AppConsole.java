@@ -32,6 +32,8 @@ public class AppConsole {
      */
     public void innit(){
         availableCommands.put("nextTurn", new CmdNextTurn(world.getCreatureQueue(), world));
+        availableCommands.put("addCreature", new CmdAddNewCreature(this));
+        availableCommands.put("sortQueue", new CmdSortQueue(this));
         loadStuff();
         world.buildConditionMap();
         new StartupMenu(this);

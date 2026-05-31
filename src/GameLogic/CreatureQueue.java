@@ -2,11 +2,14 @@ package GameLogic;
 
 import Creatures.Creature;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.*;
 
 @Getter
+@Setter
 public class CreatureQueue {
+
     private Queue<Creature> queue = new LinkedList();
     private int turnNumber;
 

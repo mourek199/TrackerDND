@@ -5,6 +5,9 @@ import UI.CreaturePopUpComponents.CreaturePopUpWindow;
 import UI.CustomButton;
 import UI.WindowMain.MainWindow;
 
+/**
+ * A button that opens creature popUpWindow
+ */
 public class CreatureSettingsButton extends CustomButton {
 
     private Creature creature;
