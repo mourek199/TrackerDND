@@ -16,6 +16,9 @@ public class GameWorld {
     private CreatureCondition[] conditions;
     private HashMap<String, CreatureCondition> mapConditions;
 
+    /**
+     * Stores the most important data such as creatures and conditions
+     */
     public GameWorld() {
         mapConditions = new HashMap<>();
         creatureQueue = new CreatureQueue();
@@ -29,6 +32,10 @@ public class GameWorld {
         creatureQueue.addToQueue(new CreatureEnemy("Pig"));
     }
 
+    /**
+     * creates a hash map of conditions
+     * @return hash map
+     */
     public HashMap buildConditionMap(){
         for (CreatureCondition condition : conditions){
             mapConditions.put(condition.getConditionName(), condition);

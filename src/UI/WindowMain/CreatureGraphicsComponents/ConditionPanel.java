@@ -11,6 +11,9 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * storess all condition for the specified creature
+ */
 public class ConditionPanel extends JPanel {
     private AppConsole appConsole;
     private Creature creature;
@@ -30,6 +33,9 @@ public class ConditionPanel extends JPanel {
         reloadConditions();
     }
 
+    /**
+     * refreshes all conditions if there had been any changes
+     */
     public void reloadConditions() {
         CustomButton addedButton;
         for (CreatureCondition condition : graphicConditions) {

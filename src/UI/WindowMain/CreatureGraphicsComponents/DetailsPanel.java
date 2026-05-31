@@ -19,6 +19,12 @@ public class DetailsPanel extends JPanel {
     private CreatureSettingsPanel settingsPanel;
     private MainWindow mainWindow;
 
+    /**
+     * displays creature conditions panel and creature settings button
+     * @param mainWindow
+     * @param appConsole
+     * @param creature
+     */
     public DetailsPanel(MainWindow mainWindow,AppConsole appConsole, Creature creature) {
         this.mainWindow = mainWindow;
         this.creature = creature;

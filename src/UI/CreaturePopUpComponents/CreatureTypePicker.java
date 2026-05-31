@@ -6,17 +6,20 @@ import UI.WindowMain.MainWindow;
 import javax.swing.*;
 import java.awt.*;
 
-public class CreatureTypePicker extends JPanel{
+/**
+ * A dropdown menu that lets player pick creature type
+ */
+public class CreatureTypePicker extends JPanel {
 
-    private MainWindow mainWindow;
-    private Integer[] options;
-    private JComboBox<Integer> dropdown;
+    private final MainWindow mainWindow;
+    private final Integer[] options;
+    private final JComboBox<Integer> dropdown;
 
     public CreatureTypePicker(MainWindow mainWindow, Creature creature) {
         this.mainWindow = mainWindow;
         options = new Integer[3];
         for (int i = 0; i < options.length; i++) {
-            options[i] = i-1;
+            options[i] = i - 1;
         }
 
         dropdown = new JComboBox<>(options);

@@ -13,6 +13,11 @@ public class CreatureSettingsPanel extends JPanel {
     private Creature creature;
     private MainWindow mainWindow;
 
+    /**
+     * A button that opens a popup menu
+     * @param creature
+     * @param mainWindow
+     */
     public CreatureSettingsPanel(Creature creature, MainWindow mainWindow) {
         this.creature = creature;
         this.mainWindow = mainWindow;

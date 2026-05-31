@@ -8,12 +8,16 @@ import UI.WindowMain.MainWindow;
 
 import java.util.concurrent.locks.Condition;
 
+/**
+ * Represents a condition with a clickable icon
+ */
 public class ConditionButton extends CustomButton {
 
     private Creature creature;
     private CreatureCondition condition;
     private ConditionPanel conditionPanel;
     private MainWindow mainWindow;
+
 
     public ConditionButton(MainWindow mainWindow,ConditionPanel conditionPanel, CreatureCondition condition, Creature creature, String imgFile, String clickedImg, int width, int height) {
         super(imgFile, clickedImg, width, height);

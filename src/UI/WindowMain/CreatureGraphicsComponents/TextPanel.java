@@ -6,6 +6,9 @@ import Creatures.Creature;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Displays creature name
+ */
 public class TextPanel extends JPanel {
     private AppConsole appConsole;
     private JLabel textPane;

@@ -1,34 +1,14 @@
 package Conditions;
 
+/**
+ * A creature condition is an additional effect a creature can get.
+ */
+
+import lombok.Getter;
+
+@Getter
 public class CreatureCondition {
     private String conditionName;
     private String conditionDesc;
     private String conditionIconPath;
-
-    public CreatureCondition() {
-    }
-
-    public String getConditionName() {
-        return conditionName;
-    }
-
-    public void setConditionName(String conditionName) {
-        this.conditionName = conditionName;
-    }
-
-    public String getConditionDesc() {
-        return conditionDesc;
-    }
-
-    public void setConditionDesc(String conditionDesc) {
-        this.conditionDesc = conditionDesc;
-    }
-
-    public String getConditionIconPath() {
-        return conditionIconPath;
-    }
-
-    public void setConditionIconPath(String conditionIconPath) {
-        this.conditionIconPath = conditionIconPath;
-    }
 }

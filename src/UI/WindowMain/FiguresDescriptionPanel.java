@@ -6,8 +6,9 @@ import Creatures.Creature;
 import javax.swing.*;
 import java.awt.*;
 
-
-
+/**
+ * creates a list of all present creatures and makes space for DM to assign and describe figures
+ */
 public class FiguresDescriptionPanel extends JPanel {
     private JTextArea textArea;
     private JPanel header;

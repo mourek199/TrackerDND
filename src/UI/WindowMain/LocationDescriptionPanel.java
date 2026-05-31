@@ -3,15 +3,15 @@ package UI.WindowMain;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Displays current location setting and objectives which the DM writes in
+ */
 public class LocationDescriptionPanel extends JPanel {
 
     private JTextArea textArea;
     private JPanel header;
     private JLabel headerText;
 
-    /**
-     * Displays current location setting and objectives which the DM writes in
-     */
     public LocationDescriptionPanel() {
         textArea = new JTextArea();
         textArea.setText(

@@ -8,14 +8,19 @@ import javax.swing.*;
 import java.awt.*;
 
 public class CreaturePopUpWindow extends JDialog {
-    private Creature creature;
-    private Background bg;
-    private JPanel panel;
-    private MainWindow mainWindow;
-    private ConditionPicker conditionPicker;
-    private CreatureTypePicker creatureTypePicker;
+    private final Creature creature;
+    private final Background bg;
+    private final JPanel panel;
+    private final MainWindow mainWindow;
+    private final ConditionPicker conditionPicker;
+    private final CreatureTypePicker creatureTypePicker;
 
-    public CreaturePopUpWindow(Creature creature, MainWindow mainWindow){
+    /**
+     * a window that pops up when you click a creature setting button
+     * @param creature specified creature
+     * @param mainWindow
+     */
+    public CreaturePopUpWindow(Creature creature, MainWindow mainWindow) {
         super(mainWindow, creature.getName(), true);
         this.mainWindow = mainWindow;
         this.creature = creature;

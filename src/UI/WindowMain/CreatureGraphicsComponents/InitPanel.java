@@ -6,6 +6,9 @@ import Creatures.Creature;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Displays creature initiative number
+ */
 public class InitPanel extends JPanel {
 
     private String renderedText;

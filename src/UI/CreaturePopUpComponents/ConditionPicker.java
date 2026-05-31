@@ -1,18 +1,21 @@
 package UI.CreaturePopUpComponents;
 
-import Conditions.CreatureCondition;
 import Creatures.Creature;
 import UI.WindowMain.MainWindow;
+
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * This dropdown menu makes user pick creature type (player, enemy, neutral)
+ */
 public class ConditionPicker extends JPanel {
 
-    private MainWindow mainWindow;
-    private String[] options;
-    private JComboBox<String> dropdown;
+    private final MainWindow mainWindow;
+    private final String[] options;
+    private final JComboBox<String> dropdown;
 
-    public ConditionPicker(MainWindow mainWindow,Creature creature) {
+    public ConditionPicker(MainWindow mainWindow, Creature creature) {
         this.mainWindow = mainWindow;
         options = new String[mainWindow.getAppConsole().getWorld().getConditions().length];
         for (int i = 0; i < mainWindow.getAppConsole().getWorld().getConditions().length; i++) {

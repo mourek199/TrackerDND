@@ -6,6 +6,9 @@ import GameLogic.CreatureQueue;
 
 import java.util.List;
 
+/**
+ * Sorts the creature queue
+ */
 public class CmdSortQueue implements Command{
 
         CreatureQueue creatureQueue;

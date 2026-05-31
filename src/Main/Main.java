@@ -4,7 +4,9 @@ import Commands.AppConsole;
 
 public class Main {
 
-    // Makes the graphics run on graphics driver using opengl
+    /**
+     * Makes the app run on graphics driver using opengl
+     */
     static void setProperties() {
         System.setProperty("sun.java2d.opengl", "true");
         System.setProperty("sun.java2d.noddraw", "true");
@@ -15,7 +17,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-
         setProperties();
         AppConsole console = new AppConsole();
         console.start();

@@ -6,11 +6,14 @@ import lombok.Getter;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Displays the name of currently edited parameter
+ */
 public class CreatureInfoLabel extends JPanel {
 
-    private Creature creature;
+    private final Creature creature;
     @Getter
-    private TextArea textArea;
+    private final TextArea textArea;
 
     public CreatureInfoLabel(Creature creature, String parameter) {
         this.creature = creature;
@@ -18,7 +21,7 @@ public class CreatureInfoLabel extends JPanel {
         textArea = new TextArea();
         setOpaque(false);
 
-        switch (parameter){
+        switch (parameter) {
             case "name" -> {
                 textArea.setText(creature.getName());
             }
@@ -28,7 +31,7 @@ public class CreatureInfoLabel extends JPanel {
             }
         }
 
-        textArea.setSize(new Dimension(100,50));
+        textArea.setSize(new Dimension(100, 50));
         this.add(textArea);
     }
 

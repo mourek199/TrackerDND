@@ -13,6 +13,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * A startup panel that pops up when you start the game
+ */
 @Getter
 public class StartupMenu extends JFrame {
 
