@@ -20,7 +20,6 @@ public class ConditionPicker extends JPanel {
         options = new String[mainWindow.getAppConsole().getWorld().getConditions().length];
         for (int i = 0; i < mainWindow.getAppConsole().getWorld().getConditions().length; i++) {
             options[i] = mainWindow.getAppConsole().getWorld().getConditions()[i].getConditionName();
-            System.out.println(options[i]);
         }
         dropdown = new JComboBox<>(options);
         dropdown.setMaximumSize(new Dimension(200, 35));

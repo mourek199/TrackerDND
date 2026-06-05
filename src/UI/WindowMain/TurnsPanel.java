@@ -27,7 +27,6 @@ public class TurnsPanel extends JPanel {
         label.setFont(new Font("Candara", Font.BOLD, 32));
         customButton = new CustomButton("/newTurn.png", "/newTurn.png", 64*2,32*2);
         customButton.addActionListener(e -> {
-            System.out.println(appConsole.getWorld().getCreatureQueue());
             appConsole.execute("nextTurn");
             mainWindow.reloadMainWindow();
         });

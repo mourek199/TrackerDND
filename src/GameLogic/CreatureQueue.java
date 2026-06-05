@@ -47,7 +47,6 @@ public class CreatureQueue {
         if (!queue.isEmpty()){
             queue.add(queue.remove());
             turnNumber++;
-            System.out.println(turnNumber);
         }
     }
 

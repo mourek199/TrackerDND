@@ -20,14 +20,12 @@ public class CreatureInfoSaveButton extends CustomButton {
             case "name" -> {
                 this.addActionListener(e -> {
                     creature.setName(label.getTextArea().getText());
-                    System.out.println(label.getTextArea().getText());
                     mainWindow.reloadMainWindow();
                 });
             }
             case "init" -> {
                 this.addActionListener(e -> {
                     creature.setInitiative(Integer.parseInt(label.getTextArea().getText()));
-                    System.out.println(label.getTextArea().getText());
                     mainWindow.reloadMainWindow();
                 });
             }

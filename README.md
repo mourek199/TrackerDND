@@ -1,4 +1,5 @@
 # Tracker DND 
+### Author: Tony
 ## Overview 🧾
 - This is a tracker app designed to be used as
 a background for famous board game Dungeons & Dragons
@@ -12,6 +13,6 @@ a background for famous board game Dungeons & Dragons
 
 ## Technologies 🔧
 - Java (openjdk-24)
-- Json ()
+- Json (jackson library)
 - Java Swing
 
